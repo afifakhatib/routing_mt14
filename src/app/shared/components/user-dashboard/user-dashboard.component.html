@@ -1,0 +1,31 @@
+
+<div class="button" align="end">
+    <button class="btn btn-sm" mat-raised-button color="primary" 
+    routerLink="addUser">
+        Add User <mat-icon>add_circle</mat-icon>
+    </button>
+</div>
+
+<mat-divider class="bg-dark mt-3"></mat-divider>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="list">
+            <ul class="list-group border border-dark">
+                <li class="list-group-item cursor"  routerLinkActive="active"
+                [routerLink]="user.userId" [queryParams]="{userRole : user.userRole}"
+                *ngFor="let user of userInfo ; let i = index"  
+                (click)="getSelectedId(user.userId)" 
+                [ngClass]="{
+                    active : selectedId === user.userId
+                }">
+                    {{i + 1}}] {{user.userName}}
+                </li>
+                <mat-divider class="bg-dark"></mat-divider>
+            </ul>
+        </div>
+    </div>
+     <div class="col-md-8">
+         <router-outlet></router-outlet>
+     </div>
+</div>

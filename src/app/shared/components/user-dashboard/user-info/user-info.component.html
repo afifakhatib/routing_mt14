@@ -1,0 +1,31 @@
+<div class="row border border-dark p-2">
+    <div class="col-md-8">
+        <div class="username">
+            <h3><strong>UserName : </strong> {{userObj.userName}} </h3>
+        </div>
+        <mat-divider class="bg-danger"></mat-divider>
+        <div class="userRole">
+            <h3><strong>UserRole : </strong> {{userObj.userRole}} </h3>
+        </div>
+        <mat-divider class="bg-danger"></mat-divider>
+        <div class="userDetails">
+            <h3><strong>UserDetails : </strong> {{userObj.userDetails}} </h3>
+        </div>
+        <mat-divider class="bg-danger"></mat-divider>
+        <div class="buttons mt-4">
+            <button class="btn btn-sm" mat-raised-button color="primary" routerLink="editUser"
+            queryParamsHandling='preserve'>
+                Edit 
+            </button>
+            <button class="btn btn-sm ml-4" mat-raised-button color="warn" 
+            (click)="onRemoveUser()">
+                Remove
+            </button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="imgConatiner">
+            <img [src]="userObj.personImg" [alt]="userObj.userName" [title]="userObj.userName">
+        </div>
+    </div>
+</div>

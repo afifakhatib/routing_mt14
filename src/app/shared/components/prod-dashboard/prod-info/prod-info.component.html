@@ -1,0 +1,35 @@
+<div class="row border border-dark p-2">
+    <div class="col-md-8">
+        <div class="username">
+            <h3><strong>UserName : </strong> {{prodObj.pname}} </h3>
+        </div>
+        <mat-divider class="bg-danger"></mat-divider>
+        <div class="userRole">
+            <h3><strong>UserRole : </strong> {{prodObj.canReturn}} </h3>
+        </div>
+        <mat-divider class="bg-danger"></mat-divider>
+        <div class="prodStatus">
+            <h3><strong>Product Status : </strong> {{prodObj.pStatus}} </h3>
+        </div>
+        <mat-divider class="bg-danger"></mat-divider>
+        <div class="prodDetails">
+            <h3><strong>UserDetails : </strong> {{prodObj.productDescription}} </h3>
+        </div>
+        <mat-divider class="bg-danger"></mat-divider>
+        <div class="buttons mt-4">
+            <button class="btn btn-sm" mat-raised-button color="primary" routerLink="editProd"
+            queryParamsHandling='preserve'>
+                Edit 
+            </button>
+            <button class="btn btn-sm ml-4" mat-raised-button color="warn" 
+            (click)="onRemoveProd()">
+                Remove
+            </button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="imgConatiner">
+            <img [src]="prodObj.productImg" [alt]="prodObj.pname" [title]="prodObj.pname">
+        </div>
+    </div>
+</div>

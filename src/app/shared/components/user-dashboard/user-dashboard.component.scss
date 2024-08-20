@@ -1,0 +1,19 @@
+
+
+.cursor{
+    cursor : pointer;
+}
+
+.cursor:focus,
+.cursor:hover,
+.cursor:active,
+.cursor.active
+{
+     background-color: #000;
+     color : #fff
+}
+
+.active{
+    background-color: #000;
+    color : #fff
+}

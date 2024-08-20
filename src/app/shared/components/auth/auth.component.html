@@ -1,0 +1,58 @@
+
+
+<main class="authMain">
+    <div>
+            <mat-card class="formCard">
+                <mat-card-header>
+                    <h1 *ngIf="!isHasAccount"> Log In </h1>
+                </mat-card-header> 
+                <mat-card-content> 
+               <ng-container *ngIf="!isHasAccount">
+                <form [formGroup]="authForm" (ngSubmit)="onLogIn()">
+                    <mat-form-field class="example-full-width w-100" appearance="fill">
+                        <mat-label>Enter Email</mat-label>
+                        <input type="text" matInput formControlName="email" placeholder="Ex.jhondpe@gmail.com">
+                        <mat-error *ngIf="getControls('email').hasError('required')">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+    
+                    <mat-form-field class="example-full-width w-100" appearance="fill">
+                        <mat-label>Enter Password</mat-label>
+                        <input type="text" matInput formControlName="password" placeholder="Ex.zaq1ZAQ!">
+                        <mat-error *ngIf="getControls('password').hasError('required')">
+                            Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+    
+                    <div class="logIn" align="end">
+                        <button class="btn btn-sm" type='submit' mat-raised-button color="primary" ty>
+                            Log In 
+                        </button>
+                    </div>
+    
+                  <div class="donthavAcc">
+                    <a href="javascript:;" class="btn btn-sm btn-link"
+                    (click)="isHasAccount = !isHasAccount">
+                        Dont Have Account ?? Sign Up
+                    </a>
+                </div>
+                  </form>
+               </ng-container>
+      
+               <ng-container *ngIf="isHasAccount">
+                <h1>
+                    Sign Up
+                </h1>
+
+                <div class="havAcc">
+                    <a href="javascript:;" class="btn btn-sm btn-link"
+                    (click)="isHasAccount = false">
+                       Already have account ?? log In
+                    </a>
+                </div>
+               </ng-container>
+                </mat-card-content>
+             </mat-card>
+    </div>
+</main>
